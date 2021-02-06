@@ -14,6 +14,7 @@ const slidersBottom = document.querySelectorAll(".slide-in-bottom");
 const slidersLeft = document.querySelectorAll(".slide-in-left");
 const backToTopBtn = document.querySelector(".back-to-top");
 const projectsSection = document.getElementById("portafolio");
+const form = document.querySelector("contact__form");
 
 /*
   ------------------------------------------------------------
@@ -27,13 +28,25 @@ backToTopBtn.addEventListener("click", function () {
   window.scrollTo(0, 0);
 });
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   let y = window.scrollY;
 
   if (y > projectsSection.getBoundingClientRect().y + window.scrollY) {
     backToTopBtn.classList.add("appear");
   } else backToTopBtn.classList.remove("appear");
-})
+});
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let formData = new FormData(form);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+});
 
 /*
   ------------------------------------------------------------
