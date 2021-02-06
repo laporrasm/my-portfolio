@@ -44,9 +44,32 @@ form.addEventListener("submit", function (e) {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
+    .then(function () {
+      showFormStatus(true);
+    })
+    .catch(function () {
+      showFormStatus(false);
+    });
 });
+
+function showFormStatus(formState) {
+  const formStateMessage = document.querySelector(".form-state");
+
+  if (formState) {
+    form.reset();
+    formStateMessage.classList.add("success");
+    formStateMessage.textContent =
+      "Gracias! Me contactaré contigo en breve!";
+  } else {
+    formStateMessage.classList.add("failure");
+    formStateMessage.textContent =
+      "Ocurrió un problema. Por favor intenta nuevamente.";
+  }
+
+  setTimeout(function() {
+    formStateMessage.classList.remove("success", "failure");
+  }, 5000);
+}
 
 /*
   ------------------------------------------------------------
