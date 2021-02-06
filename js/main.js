@@ -14,7 +14,7 @@ const slidersBottom = document.querySelectorAll(".slide-in-bottom");
 const slidersLeft = document.querySelectorAll(".slide-in-left");
 const backToTopBtn = document.querySelector(".back-to-top");
 const projectsSection = document.getElementById("portafolio");
-const form = document.querySelector("contact__form");
+const form = document.querySelector(".contact__form");
 
 /*
   ------------------------------------------------------------
