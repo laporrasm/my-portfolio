@@ -13,7 +13,7 @@ const faders = document.querySelectorAll(".fade-in");
 const slidersBottom = document.querySelectorAll(".slide-in-bottom");
 const slidersLeft = document.querySelectorAll(".slide-in-left");
 const backToTopBtn = document.querySelector(".back-to-top");
-const skillsSection = document.getElementById("habilidades");
+const projectsSection = document.getElementById("portafolio");
 
 /*
   ------------------------------------------------------------
@@ -26,6 +26,14 @@ const skillsSection = document.getElementById("habilidades");
 backToTopBtn.addEventListener("click", function () {
   window.scrollTo(0, 0);
 });
+
+window.addEventListener("scroll", function() {
+  let y = window.scrollY;
+
+  if (y > projectsSection.getBoundingClientRect().y + window.scrollY) {
+    backToTopBtn.classList.add("appear");
+  } else backToTopBtn.classList.remove("appear");
+})
 
 /*
   ------------------------------------------------------------
@@ -94,28 +102,3 @@ slidersBottom.forEach(function (slider) {
 slidersLeft.forEach(function (slider) {
   appearOnScroll.observe(slider);
 });
-
-/*
-  ------------------------------------------------------------
-  ------------------------------------------------------------
-  Back To Top Button
-  ------------------------------------------------------------
-  ------------------------------------------------------------
-*/
-
-const btnOptions = {
-  threshold: 1,
-};
-
-const toggleButtonVisibility = new IntersectionObserver(function (entries) {
-  entries.forEach(function(entry) {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      backToTopBtn.classList.toggle("appear");
-    }
-  })
-},
-btnOptions);
-
-toggleButtonVisibility.observe(skillsSection);
