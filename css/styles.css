@@ -515,33 +515,22 @@ textarea {
   transition: opacity 300ms ease-in, transform 500ms linear;
 }
 
-.slide-in-bottom.appear,
-.slide-in-left.appear {
+.slide-in-bottom.appear {
   opacity: 1!important;
   transform: translate(0)!important;
 }
 
-.tag.slide-in-left {
-  opacity: 0;
-  transform: translateX(-2em);
-}
-
-.about__text.slide-in-left {
-  opacity: 0;
-  transform: translateX(-.5em);
-}
-
-.slide-in-left:nth-child(4n + 1) {
+.tag.fade-in:nth-child(4n + 1) {
   transition: opacity 400ms ease-in, transform 300ms linear;
 }
-.slide-in-left:nth-child(4n + 2) {
-  transition: opacity 450ms ease-in, transform 350ms linear;
+.tag.fade-in:nth-child(4n + 2) {
+  transition: opacity 500ms ease-in, transform 350ms linear;
 }
-.slide-in-left:nth-child(4n + 3) {
-  transition: opacity 500ms ease-in, transform 400ms linear;
+.tag.fade-in:nth-child(4n + 3) {
+  transition: opacity 600ms ease-in, transform 400ms linear;
 }
-.slide-in-left:nth-child(4n + 4) {
-  transition: opacity 550ms ease-in, transform 450ms linear;
+.tag.fade-in:nth-child(4n + 4) {
+  transition: opacity 700ms ease-in, transform 450ms linear;
 }
 
 .form-state {

@@ -11,7 +11,6 @@ const nav = document.querySelector(".nav");
 const internalLinks = document.querySelectorAll(".nav__link");
 const faders = document.querySelectorAll(".fade-in");
 const slidersBottom = document.querySelectorAll(".slide-in-bottom");
-const slidersLeft = document.querySelectorAll(".slide-in-left");
 const backToTopBtn = document.querySelector(".back-to-top");
 const projectsSection = document.getElementById("portafolio");
 const form = document.querySelector(".contact__form");
@@ -132,9 +131,5 @@ faders.forEach(function (fader) {
 });
 
 slidersBottom.forEach(function (slider) {
-  appearOnScroll.observe(slider);
-});
-
-slidersLeft.forEach(function (slider) {
   appearOnScroll.observe(slider);
 });
