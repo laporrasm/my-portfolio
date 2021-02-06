@@ -308,7 +308,7 @@ textarea {
 }
 
 .back-to-top:hover svg {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
 }
 
 .back-to-top.appear {
@@ -517,7 +517,7 @@ textarea {
   transform: translate(0)!important;
 }
 
-.skills.slide-in-left {
+.tag.slide-in-left {
   opacity: 0;
   transform: translateX(-2em);
 }
