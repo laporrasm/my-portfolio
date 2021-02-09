@@ -51,7 +51,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.15rem;
 }
 
 img {
@@ -223,22 +231,27 @@ form {
 label {
   display: block;
   color: var(--dark-gray);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 input,
 textarea {
   width: 100%;
   margin-top: 0.5em;
-  padding: 0.75em;
+  padding: .5em;
   color: var(--dark-gray);
   font-family: inherit;
   font-size: 1rem;
   background-color: #f1f1f1;
-  border-radius: 5px;
-  border: none;
+  border: 2px solid #f1f1f1;
   outline: none;
   resize: vertical;
+  transition: border-color 300ms;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom-color: var(--dark-gray);
 }
 
 .social-icons {
@@ -276,16 +289,30 @@ textarea {
   margin-top: 1.5em;
 }
 
-.other-projects h3 {
-  margin: 3em 0 1.5em;
+.other-projects {
+  margin-top: 4em;
 }
 
 .other-project + .other-project {
   margin-top: 2em;
 }
 
-.other-project h4 {
+.other-project h3 {
   margin: 2em 0 1em;
+}
+
+.other-project span {
+  display: inline-block;
+  margin-top: 2em;
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 300ms;
+}
+
+.other-project:hover span {
+  border-bottom-color: currentColor;
 }
 
 .back-to-top {
@@ -395,7 +422,6 @@ textarea {
 
   .hero .inner {
     display: flex;
-    align-items: center;
   }
 
   .recent-project__text {
@@ -426,7 +452,7 @@ textarea {
     margin-left: 2em;
   }
 
-  .other-project h4 {
+  .other-project h3 {
     margin-top: 0;
   }
 
